@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Nod: Follows You badge for X",
   "short_name": "Nod",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "See who follows you back on X (Twitter): Mutual, Follows you or Doesn't follow you, next to every name. Private, no tracking.",
   "icons": {
     "16": "icons/icon-16.png",
