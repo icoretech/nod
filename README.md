@@ -16,6 +16,24 @@ Your own posts stay unlabeled, as do posts where X hasn't supplied a follow
 status. Labels follow X's light, dim, and dark themes and use English or Italian
 according to your X language setting.
 
+## Download a release
+
+Get the [latest release](https://github.com/icoretech/nod/releases/latest).
+Each release includes standalone downloads:
+
+- **[Chrome ZIP](https://github.com/icoretech/nod/releases/latest/download/nod-chrome.zip)**
+  — extract the archive to a folder you will keep. In Chrome's extensions page,
+  enable **Developer mode**, choose **Load unpacked**, and select that folder.
+- **[Unsigned Firefox ZIP](https://github.com/icoretech/nod/releases/latest/download/nod-firefox-unsigned.zip)**
+  — extract it, open `about:debugging#/runtime/this-firefox` in Firefox or
+  LibreWolf, choose **Load Temporary Add-on**, and select `manifest.json`.
+  For a persistent installation in standard Firefox, install `nod-firefox.xpi`
+  from the release when the signed download is available.
+- **[Reviewer source](https://github.com/icoretech/nod/releases/latest/download/nod-review-source.zip)**
+  — rebuild the extension with the instructions below. To verify the downloads,
+  put all three ZIPs and the release's `SHA256SUMS` in the same directory and
+  run `shasum -a 256 -c SHA256SUMS`.
+
 ## Install from source
 
 From the repository root, use Node.js 24 or newer and npm:
@@ -65,6 +83,19 @@ If X changes its markup or data format, start with the
 [relationship parser](src/core/relationships.ts),
 [network observer](src/x/network-tap.ts), or
 [rendered-post fallback](src/x/react-props.ts).
+
+## Releases
+
+CI runs on pull requests and pushes to `main` using GitHub-hosted Linux runners.
+Merging the release-please version PR creates a version tag and a draft
+release. The release workflow checks out that tag, runs the tests, builds and
+validates the packages, and publishes the draft with its downloads. To retry
+an interrupted draft, run the **Release** workflow on `main` with its tag.
+Mozilla signing and store submissions are separate steps.
+
+After Mozilla approves a listed version, run **Attach signed Firefox XPI**
+on `main` with the same tag. It verifies Mozilla's SHA-256 digest and compares
+the extension contents with the published Firefox ZIP before attaching the XPI.
 
 ## Build for AMO reviewers
 
