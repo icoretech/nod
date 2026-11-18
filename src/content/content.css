@@ -1,0 +1,63 @@
+/* Relationship pill shown after the author's name (and X's verified badge).
+   Palette comes from the Nod logo: blue = you follow them, coral = they follow you.
+   <html data-nod-theme="light|dark"> is set by the content script from X's background,
+   covering X's white, dim and lights-out themes. */
+[data-nod-badge] {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  gap: 4px;
+  flex-shrink: 0;
+  margin: 0 0 0 6px;
+  padding: 1px 7px 1px 6px;
+  border-radius: 999px;
+  font-family:
+    TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: default;
+}
+
+[data-nod-badge] svg {
+  flex-shrink: 0;
+  width: 15px;
+  height: 11px;
+}
+
+[data-nod-badge="mutual"] {
+  background-color: #e8efff;
+  color: #1d4ed8;
+}
+
+[data-nod-badge="follows-you"] {
+  background-color: #ffe8e1;
+  color: #c2410c;
+}
+
+[data-nod-badge="not-following-back"],
+[data-nod-badge="not-following"] {
+  background-color: transparent;
+  color: rgb(83, 100, 113);
+  box-shadow: inset 0 0 0 1px #cfd9de;
+  font-weight: 500;
+}
+
+:root[data-nod-theme="dark"] [data-nod-badge="mutual"] {
+  background-color: rgba(79, 139, 255, 0.19);
+  color: #93b8ff;
+}
+
+:root[data-nod-theme="dark"] [data-nod-badge="follows-you"] {
+  background-color: rgba(255, 122, 89, 0.17);
+  color: #ff9a80;
+}
+
+:root[data-nod-theme="dark"] [data-nod-badge="not-following-back"],
+:root[data-nod-theme="dark"] [data-nod-badge="not-following"] {
+  color: rgb(139, 152, 165);
+  box-shadow: inset 0 0 0 1px rgba(139, 152, 165, 0.35);
+}

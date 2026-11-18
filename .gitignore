@@ -1,0 +1,42 @@
+node_modules/
+dist/
+artifacts/
+web-ext-artifacts/
+coverage/
+*.tsbuildinfo
+*.xpi
+*.crx
+*.zip
+
+# Local configuration, signing files and browser profiles
+.env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.p12
+*.pfx
+*.key
+.amo-upload-uuid
+.web-extension-id
+/profiles/
+/firefox-profile/
+
+# Workstation and development scratch files
+.DS_Store
+*.log
+.local/
+.omo/
+.sisyphus/
+.claude/
+.codex/
+/docs/
+
+# Design studies, live captures and store submission materials stay local.
+/design/
+/store/*
+!/store/amo-metadata.json
+!/store/privacy-policy.md
+/scripts/render-screenshots.sh
+/assets/brand/*
+!/assets/brand/nod-logo-source.png
