@@ -25,10 +25,13 @@ Each release includes standalone downloads:
   — extract the archive to a folder you will keep. In Chrome's extensions page,
   enable **Developer mode**, choose **Load unpacked**, and select that folder.
 - **[Unsigned Firefox ZIP](https://github.com/icoretech/nod/releases/latest/download/nod-firefox-unsigned.zip)**
-  — extract it, open `about:debugging#/runtime/this-firefox` in Firefox or
-  LibreWolf, choose **Load Temporary Add-on**, and select `manifest.json`.
-  For a persistent installation in standard Firefox, install `nod-firefox.xpi`
-  from the release when the signed download is available.
+  — in a LibreWolf profile that accepts unsigned extensions, open
+  `about:addons`, click the gear, choose **Install Add-on From File**, and
+  select the downloaded ZIP directly. Nod stays installed after a restart.
+  Standard Firefox requires the Mozilla-signed `nod-firefox.xpi` for a
+  persistent installation. To test the unsigned ZIP there, open
+  `about:debugging#/runtime/this-firefox` and select the ZIP with
+  **Load Temporary Add-on**.
 - **[Reviewer source](https://github.com/icoretech/nod/releases/latest/download/nod-review-source.zip)**
   — rebuild the extension with the instructions below. To verify the downloads,
   put all three ZIPs and the release's `SHA256SUMS` in the same directory and
