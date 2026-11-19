@@ -1,6 +1,6 @@
 # Nod: Privacy Policy
 
-_Last updated: 18 November 2026_
+_Last updated: 19 November 2026_
 
 Nod is a browser extension published by iCoreTech (icorete.ch). Next to the name of each post author on x.com, it shows whether you follow each other ("Mutual"), whether they follow you ("Follows you") or whether they don't follow you ("Doesn't follow you").
 
