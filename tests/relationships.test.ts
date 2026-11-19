@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { extractRelationships } from "../../src/core/relationships.js";
-import { RelationshipStore } from "../../src/core/store.js";
+import { extractRelationships } from "../src/core/relationships.js";
+import { RelationshipStore } from "../src/core/store.js";
 
 /** Trimmed copy of the HomeTimeline shape observed on x.com in Nov 2026. */
 const homeTimeline = {

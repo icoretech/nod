@@ -1,6 +1,6 @@
 # Nod
 
-![Nod wordmark beside overlapping blue and coral glass circles](assets/nod-banner.webp)
+![Nod wordmark beside overlapping blue and coral glass circles](assets/banner.webp)
 
 Nod shows who follows you on X. It adds a small label beside the author's name
 on posts in your timeline, replies, search results, and profile feeds.
@@ -34,17 +34,18 @@ according to your X language setting.
 Get the [latest release](https://github.com/icoretech/nod/releases/latest).
 Each release includes standalone downloads:
 
+- **[Unsigned Firefox ZIP](https://github.com/icoretech/nod/releases/latest/download/nod-firefox-unsigned.zip)**
+  — in a LibreWolf profile that accepts unsigned add-ons
+  (`xpinstall.signatures.required` set to `false` in `about:config`), open
+  `about:addons`, click the gear, choose **Install Add-on From File**, and
+  select the downloaded ZIP directly. It stays installed after a restart.
+  Standard Firefox requires the Mozilla-signed `nod-firefox.xpi`, attached to a
+  release once Mozilla approves it. To test the unsigned ZIP there, open
+  `about:debugging#/runtime/this-firefox` and select the ZIP with
+  **Load Temporary Add-on**.
 - **[Chrome ZIP](https://github.com/icoretech/nod/releases/latest/download/nod-chrome.zip)**
   — extract the archive to a folder you will keep. In Chrome's extensions page,
   enable **Developer mode**, choose **Load unpacked**, and select that folder.
-- **[Unsigned Firefox ZIP](https://github.com/icoretech/nod/releases/latest/download/nod-firefox-unsigned.zip)**
-  — in a LibreWolf profile that accepts unsigned extensions, open
-  `about:addons`, click the gear, choose **Install Add-on From File**, and
-  select the downloaded ZIP directly. Nod stays installed after a restart.
-  Standard Firefox requires the Mozilla-signed `nod-firefox.xpi` for a
-  persistent installation. To test the unsigned ZIP there, open
-  `about:debugging#/runtime/this-firefox` and select the ZIP with
-  **Load Temporary Add-on**.
 - **[Reviewer source](https://github.com/icoretech/nod/releases/latest/download/nod-review-source.zip)**
   — rebuild the extension with the instructions below. To verify the downloads,
   put all three ZIPs and the release's `SHA256SUMS` in the same directory and
@@ -59,16 +60,28 @@ npm ci
 npm run build
 ```
 
-- **Chrome, Brave, Edge, or Arc:** open the browser's extensions page, enable
-  **Developer mode**, choose **Load unpacked**, and select `dist/chrome/`.
-- **Firefox or LibreWolf:** open `about:debugging#/runtime/this-firefox`,
-  choose **Load Temporary Add-on**, and select `dist/firefox/manifest.json`.
-  The temporary installation lasts until you restart the browser.
+1. Open `about:debugging#/runtime/this-firefox`.
+2. Click **Load Temporary Add-on…** and select `dist/firefox/manifest.json`.
+3. Open or reload an x.com tab while signed in to see the labels.
 
-Open or reload an X tab while signed in to see the labels. For a persistent
-Firefox installation, use a Mozilla-signed XPI. LibreWolf profiles already
-configured to accept unsigned add-ons can also install the Firefox ZIP from
-`npm run package` via **Install Add-on From File** in `about:addons`.
+A temporary add-on stays loaded until the browser restarts. After rebuilding,
+click **Reload** next to it on the same page.
+
+To keep it installed across restarts, package it and install the ZIP:
+
+```sh
+npm run package
+```
+
+In a LibreWolf profile that accepts unsigned add-ons
+(`xpinstall.signatures.required` set to `false` in `about:config`), open
+`about:addons`, click the gear, choose **Install Add-on From File**, and select
+the ZIP in `artifacts/firefox/`. It stays installed after a restart. To update,
+build and install again the same way. Standard Firefox keeps only
+Mozilla-signed add-ons installed, so use the temporary installation there.
+
+**Chrome, Brave, Edge, or Arc:** open the browser's extensions page, enable
+**Developer mode**, choose **Load unpacked**, and select `dist/chrome/`.
 
 ## How it works
 
@@ -90,9 +103,10 @@ npm run package
 npm run web-ext:lint
 ```
 
-`npm run biome:ci` checks formatting, lint, and TypeScript.
-`npm run package` builds both browsers and writes their ZIPs to
-`artifacts/chrome/` and `artifacts/firefox/`.
+`npm run biome:ci` checks formatting, lint, and TypeScript. `npm run package`
+builds both browsers and writes their ZIPs to `artifacts/chrome/` and
+`artifacts/firefox/`. `scripts/make-icons.sh` rebuilds the icons from
+`assets/brand/logo-source.png` (requires ImageMagick 7).
 
 If X changes its markup or data format, start with the
 [author selectors](src/x/selectors.ts),
@@ -143,7 +157,8 @@ the extension contents with the published Firefox ZIP before attaching the XPI.
 From the source archive root, run `npm ci` followed by `npm run build` with
 Node.js 24 or newer. The lockfile pins the dependencies. Vite produces an
 unminified `content.js`, and the build assembles the Firefox manifest, script,
-stylesheet, and icons in `dist/firefox/`.
+stylesheet, and icons in `dist/firefox/`. `npm run package:review-source`
+creates that archive from this repository.
 
 ## License
 

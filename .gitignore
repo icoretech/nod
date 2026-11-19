@@ -39,4 +39,4 @@ coverage/
 !/store/privacy-policy.md
 /scripts/render-screenshots.sh
 /assets/brand/*
-!/assets/brand/nod-logo-source.png
+!/assets/brand/logo-source.png

@@ -1,10 +1,10 @@
 import { afterEach, describe, expect, it } from "vitest";
-import { type Decorator, installDecorator, THEME_ATTR } from "../../src/content/decorator.js";
-import { RelationshipStore } from "../../src/core/store.js";
-import { badgeKind } from "../../src/ui/badge.js";
-import { themeOf } from "../../src/ui/theme.js";
-import { relationshipsFromReact } from "../../src/x/react-props.js";
-import { handleOf } from "../../src/x/selectors.js";
+import { type Decorator, installDecorator, THEME_ATTR } from "../src/content/decorator.js";
+import { RelationshipStore } from "../src/core/store.js";
+import { badgeKind } from "../src/ui/badge.js";
+import { themeOf } from "../src/ui/theme.js";
+import { relationshipsFromReact } from "../src/x/react-props.js";
+import { handleOf } from "../src/x/selectors.js";
 
 /** Same nesting as a timeline tweet header on x.com (Nov 2026). */
 const tweetHtml = (handle: string) => `

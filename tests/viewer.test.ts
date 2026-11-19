@@ -1,10 +1,6 @@
 import { afterEach, describe, expect, it } from "vitest";
-import type { RelationshipRecord } from "../../src/core/relationships.js";
-import {
-  createViewerFilter,
-  viewerHandleFromNav,
-  viewerIdFromBootstrap,
-} from "../../src/x/viewer.js";
+import type { RelationshipRecord } from "../src/core/relationships.js";
+import { createViewerFilter, viewerHandleFromNav, viewerIdFromBootstrap } from "../src/x/viewer.js";
 
 /** Same layout as x.com's inline bootstrap script (Nov 2026), trimmed. */
 const bootstrap = (session: object) =>

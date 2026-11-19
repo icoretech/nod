@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { installNetworkTap, isApiUrl } from "../../src/x/network-tap.js";
+import { installNetworkTap, isApiUrl } from "../src/x/network-tap.js";
 
 const API_URL = "https://x.com/i/api/graphql/abc/HomeTimeline";
 
