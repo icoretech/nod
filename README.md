@@ -3,7 +3,8 @@
 ![Nod wordmark beside overlapping blue and coral glass circles](assets/banner.webp)
 
 Nod shows who follows you on X. It adds a small label beside the author's name
-on posts in your timeline, replies, search results, and profile feeds.
+on posts in your timeline, replies, search results, and profile feeds. It runs
+in Chrome and other Chromium browsers, and in Firefox on desktop and Android.
 
 ![Three posts on X labeled Mutual, Follows you, and Doesn't follow you](assets/screenshots/shot-1-feed.webp)
 
@@ -33,7 +34,9 @@ according to your X language setting.
 ## Download a release
 
 Get the [latest release](https://github.com/icoretech/nod/releases/latest).
-Each release includes standalone downloads:
+On Firefox for Android, install Nod from addons.mozilla.org: Android accepts
+only Mozilla-signed extensions from the store. Each release includes standalone
+downloads:
 
 - **[Unsigned Firefox ZIP](https://github.com/icoretech/nod/releases/latest/download/nod-firefox-unsigned.zip)**
   — in a LibreWolf profile that accepts unsigned add-ons
