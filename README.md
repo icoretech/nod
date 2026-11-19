@@ -5,6 +5,8 @@
 Nod shows who follows you on X. It adds a small label beside the author's name
 on posts in your timeline, replies, search results, and profile feeds.
 
+![Three posts on X labeled Mutual, Follows you, and Doesn't follow you](assets/screenshots/shot-1-feed.webp)
+
 | Label | What it means |
 | --- | --- |
 | **Mutual** | You follow each other. |
@@ -15,6 +17,17 @@ Hover over **Doesn't follow you** to see whether you follow the author.
 Your own posts stay unlabeled, as do posts where X hasn't supplied a follow
 status. Labels follow X's light, dim, and dark themes and use English or Italian
 according to your X language setting.
+
+<details>
+<summary>More screenshots</summary>
+
+![A profile on X whose pinned post is labeled Mutual](assets/screenshots/shot-2-mutual.webp)
+
+![A profile on X whose posts are labeled Follows you](assets/screenshots/shot-3-follows-you.webp)
+
+![A profile on X whose posts are labeled Doesn't follow you](assets/screenshots/shot-4-no-follow-back.webp)
+
+</details>
 
 ## Download a release
 
