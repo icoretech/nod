@@ -13,7 +13,8 @@ on posts in your timeline, replies, search results, and profile feeds.
 | **Follows you** | The author follows you. You don't follow them. |
 | **Doesn't follow you** | The author doesn't follow you. |
 
-Hover over **Doesn't follow you** to see whether you follow the author.
+On desktop, hover over **Doesn't follow you** to see whether you follow the
+author.
 Your own posts stay unlabeled, as do posts where X hasn't supplied a follow
 status. Labels follow X's light, dim, and dark themes and use English or Italian
 according to your X language setting.
@@ -80,6 +81,18 @@ the ZIP in `artifacts/firefox/`. It stays installed after a restart. To update,
 build and install again the same way. Standard Firefox keeps only
 Mozilla-signed add-ons installed, so use the temporary installation there.
 
+**Firefox for Android:** the Firefox package also declares Android support
+(`gecko_android`, Firefox 142 or newer). To try a build on a phone or emulator
+with Firefox installed, enable **Remote debugging via USB** in Firefox's
+settings, connect the device over `adb`, and run:
+
+```sh
+npx web-ext run --source-dir dist/firefox --target firefox-android \
+  --android-device <adb device id> --firefox-apk org.mozilla.firefox
+```
+
+Use `org.mozilla.firefox_beta` or `org.mozilla.fenix` for Beta or Nightly.
+
 **Chrome, Brave, Edge, or Arc:** open the browser's extensions page, enable
 **Developer mode**, choose **Load unpacked**, and select `dist/chrome/`.
 
@@ -142,8 +155,10 @@ Federation, so no Google key is stored. The service account must be the one
 added under **Account** in the Chrome Web Store dashboard. The Firefox job uses
 the AMO API credentials, takes the license and reviewer notes from
 `store/amo-metadata.json`, uses the GitHub release notes as the version notes,
-and uploads the release's source archive. Listing text and images are edited in
-each store's dashboard.
+and uploads the release's source archive. The `gecko_android` entry in
+`manifest/firefox.json` is what lists a version for Firefox for Android as well
+as desktop; no separate upload or setting is needed. Listing text and images
+are edited in each store's dashboard.
 
 To check the credentials without uploading anything, run **Check store access**
 on `main`. It reads the Chrome Web Store item status and the AMO account.
