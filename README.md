@@ -31,12 +31,17 @@ according to your X language setting.
 
 </details>
 
+## Install
+
+- **Chrome, Edge, Brave, and other Chromium browsers:** install Nod from the
+  [Chrome Web Store](https://chromewebstore.google.com/detail/hpckgagkjnifcfcianmgaikpmoijibeb).
+- **Firefox on desktop and Android:** Nod is in review on addons.mozilla.org.
+  Firefox for Android accepts only Mozilla-signed extensions from that store.
+
 ## Download a release
 
 Get the [latest release](https://github.com/icoretech/nod/releases/latest).
-On Firefox for Android, install Nod from addons.mozilla.org: Android accepts
-only Mozilla-signed extensions from the store. Each release includes standalone
-downloads:
+Each release includes standalone downloads:
 
 - **[Unsigned Firefox ZIP](https://github.com/icoretech/nod/releases/latest/download/nod-firefox-unsigned.zip)**
   — in a LibreWolf profile that accepts unsigned add-ons
