@@ -35,8 +35,8 @@ according to your X language setting.
 
 - **Chrome, Edge, Brave, and other Chromium browsers:** install Nod from the
   [Chrome Web Store](https://chromewebstore.google.com/detail/hpckgagkjnifcfcianmgaikpmoijibeb).
-- **Firefox on desktop and Android:** Nod is in review on addons.mozilla.org.
-  Firefox for Android accepts only Mozilla-signed extensions from that store.
+- **Firefox on desktop and Android:** install Nod from
+  [addons.mozilla.org](https://addons.mozilla.org/firefox/addon/nod-follows-you-badge-for-x/).
 
 ## Download a release
 
